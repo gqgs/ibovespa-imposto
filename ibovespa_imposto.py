@@ -307,9 +307,11 @@ def DT_trade_imposto(df):
 
     imposto_DT = df_group['DARF'].sum()
 
+    lucro_DT = df_group['Lucro-DT'].sum()
+
     st.subheader("DT-Trade")
 
-    st.write(f"O total imposto devido em relação as operações DT-trade no periodo escolhido é {round(imposto_DT,2)}")
+    st.write(f"O total imposto devido em relação as operações DT-trade no periodo escolhido é {round(imposto_DT,2)} ({round(lucro_DT,2)})")
 
     return df_group[df_group['DARF']!=0]
 
